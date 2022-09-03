@@ -30,11 +30,4 @@ public class AuthController {
     public ResponseEntity<SignInResponse> refreshToken(@RequestBody TokenRequest tokenRequest){
         return ResponseEntity.ok(authService.refreshToken(tokenRequest));
     }
-
-//    @GetMapping("/login/info")
-//    public ResponseEntity<?> getUserInfo(@RequestParam("token") String accessToken){
-//        return ResponseEntity.ok(restJsonService.getUserInfo(accessToken));
-//    }
-
-
 }
