@@ -33,9 +33,6 @@ public class SecurityConfig {
             .oauth2Login()
             .redirectionEndpoint()
             .baseUri("/oauth2/code/*")
-//                    .and()
-//                .userInfoEndpoint()
-//                    .userService(customOAuth2UserService)
             ;
 
         return http.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class).build();
