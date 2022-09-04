@@ -5,9 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class SignUpRequest {
-    private String clientId;
-    private String userId;
-    private String userName;
+    private String id;
     private String email;
     private String nickname;
     private String profileImageUrl;

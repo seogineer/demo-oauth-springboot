@@ -16,20 +16,18 @@ public class UserService {
 
     @Transactional
     public String createUser(SignUpRequest signUpRequest){
-        if(userRepository.existsByIdAndAuthProvider(signUpRequest.getClientId(), signUpRequest.getAuthProvider())){
+        if(userRepository.existsByIdAndAuthProvider(signUpRequest.getId(), signUpRequest.getAuthProvider())){
             throw new BadRequestException("aleady exist user");
         }
 
         return userRepository.save(
                 User.builder()
-                        .clientId(signUpRequest.getClientId())
-                        .userId(signUpRequest.getUserId())
-                        .userName(signUpRequest.getUserName())
+                        .id(signUpRequest.getId())
                         .nickname(signUpRequest.getNickname())
                         .email(signUpRequest.getEmail())
                         .profileImageUrl(signUpRequest.getProfileImageUrl())
                         .role(Role.USER)
                         .authProvider(signUpRequest.getAuthProvider())
-                        .build()).getClientId();
+                        .build()).getId();
     }
 }

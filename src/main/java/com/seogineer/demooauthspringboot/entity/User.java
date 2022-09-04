@@ -14,13 +14,7 @@ import javax.persistence.*;
 @Table(name = "user_tbl")
 public class User extends BaseTimeEntity {
     @Id
-    private String clientId;
-
-    @Column(nullable = false)
-    private String userId;
-
-    @Column(nullable = false)
-    private String userName;
+    private String id;
 
     @Column(nullable = false)
     private String nickname;
@@ -41,18 +35,14 @@ public class User extends BaseTimeEntity {
 
     @Builder
     public User(
-            String clientId
-            , String userId
-            , String userName
+            String id
             , String nickname
             , String email
             , String profileImageUrl
             , Role role
             , AuthProvider authProvider
     ){
-        this.clientId = clientId;
-        this.userId = userId;
-        this.userName = userName;
+        this.id = id;
         this.nickname = nickname;
         this.email = email;
         this.profileImageUrl = profileImageUrl;

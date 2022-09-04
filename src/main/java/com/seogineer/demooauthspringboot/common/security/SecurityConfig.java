@@ -35,6 +35,6 @@ public class SecurityConfig {
             .baseUri("/oauth2/code/*")
             ;
 
-        return http.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class).build();
+        return http.build();
     }
 }
